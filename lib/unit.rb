@@ -8,6 +8,7 @@ class Unit
   end
 
   def attack!(enemy)
+    return false if enemy.dead? || dead?
     if enemy.is_a? Barracks
       enemy.damage((attack_power / 2.0).ceil)
     else
