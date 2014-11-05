@@ -1,14 +1,13 @@
-require_relative 'footman'
-require_relative 'peasant'
+require_relative 'unit'
 
-class Barracks
+class Barracks < Unit
 
-  attr_reader :gold, :food, :health_points
+  attr_reader :gold, :food
 
   def initialize
+    super(500, 0)
     @gold = 1000
     @food = 80
-    @health_points = 500
   end
 
   def train_footman

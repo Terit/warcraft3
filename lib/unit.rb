@@ -19,4 +19,8 @@ class Unit
     @health_points -= amount
   end
 
+  def dead?
+    health_points == 0 ? true : false
+  end
+
 end
