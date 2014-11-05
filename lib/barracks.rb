@@ -2,12 +2,13 @@ require_relative 'unit'
 
 class Barracks < Unit
 
-  attr_reader :gold, :food
+  attr_reader :gold, :food, :lumber
 
   def initialize
     super(500, 0)
     @gold = 1000
     @food = 80
+    @lumber = 500
   end
 
   def train_footman
