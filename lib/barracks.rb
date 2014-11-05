@@ -3,11 +3,12 @@ require_relative 'peasant'
 
 class Barracks
 
-  attr_reader :gold, :food
+  attr_reader :gold, :food, :health_points
 
   def initialize
     @gold = 1000
     @food = 80
+    @health_points = 500
   end
 
   def train_footman
@@ -33,4 +34,9 @@ class Barracks
   def can_train_peasant?
     (food < 5 || gold < 90) ? false : true
   end
+
+  def damage(amount)
+    @health_points -= amount
+  end
+
 end

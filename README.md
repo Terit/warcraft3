@@ -58,3 +58,41 @@ StackOverflow: [What is attr_accessor in Ruby?](http://stackoverflow.com/questio
 * How to write your own `initialize` method
 * How to use inheritance to extend a class
 * Extending / inheriting methods via `super`
+Enhancements
+Below are the list of enhancements you will be making to the Warcraft 3 game today. Please do them in order.
+
+===============
+
+## Enhancement 1
+In most strategy games, like Warcraft III, buildings can also be attacked by units. Since a barracks is a building, it has substantial more HP (500) To make matters worse, a Footman does only HALF of its AP as damage to a Barracks. This is because they are quite ineffective against buildings.
+
+Note: The damage amount should be an integer (Fixnum). Take the ceil division result.
+
+## Enhancement 2
+Units start off alive but they die if their HP hits 0 or lower. This is usually a result of receiving damage from combat.
+
+Implementation: Define a method dead? on the Unit class. We add it to Unit instead of Footman for example b/c all units can die, not just footman or peasants.
+
+## Enhancement 3
+A dead unit cannot attack another unit. Conversely, an alive unit will also not attack another unit that is already dead.
+
+## Enhancement 4
+Aside from gold and food, there is also the concept of lumber. Add lumber as a resource that the barracks can handle.
+
+A Barracks can start off with 500 lumber.
+
+## Enhancement 5
+Introduce a SiegeEngine Unit. The SiegeEngine is very effective against buildings such as the Barracks. It is however ineffective against other units (can't attack them, as though they were dead).
+
+So unlike with Footman (whose attacks do a fraction of the damage they normally would), the SiegeEngine does 2x the damage against the Barracks
+
+Also, Siege Engines can attack other siege engines even though they cannot attack any other units (such as Peasants or Footmen)
+
+Stats:
+
+AP: 50
+HP: 400
+Cost: 200 gold, 60 lumber, 3 food
+Notes:
+
+You will need to require the seige_engine.rb file in spec_helper.rb
