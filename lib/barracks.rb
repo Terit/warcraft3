@@ -35,8 +35,17 @@ class Barracks < Unit
     (food < 5 || gold < 90) ? false : true
   end
 
-  def damage(amount)
-    @health_points -= amount
+  def train_siege_engine
+    if can_train_siege_engine?
+      @gold -= 200
+      @food -= 3
+      @lumber -= 60
+      SiegeEngine.new
+    end
+  end
+
+  def can_train_siege_engine?
+    (food < 3 || gold < 200 || lumber < 60) ? false : true
   end
 
 end
